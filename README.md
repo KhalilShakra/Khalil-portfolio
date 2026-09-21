@@ -5,8 +5,6 @@ NBI/Handelsakademin. It's a lightweight static site (plain HTML/CSS/JS
 ---
 
 ## 🚀 How to open the website
-
-Just **double-click `index.html`** — it opens in your browser. That's it.
-
+https://khalilshakra.github.io/Khalil-portfolio/
 
 
