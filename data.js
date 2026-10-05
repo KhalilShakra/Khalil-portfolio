@@ -34,45 +34,34 @@ const DATA = {
   /* ---------- 3. PROJECTS ----------
      >>> Add your own projects here later. <<<
      Copy a { } block, paste it, and change the text.
-       image:  path to a square image in assets/, or "" to show a placeholder
+       tags:   skills shown as small chips, e.g. ["C#", ".NET"]
+       image:  path to an image in assets/, or "" to show initials
        demo:   live link, or "" to hide the button
        code:   GitHub link, or "" to hide the button
-       status: "" for none, or a small badge like "In progress" / "Planned" */
+       status: "" for none, or a small badge like "Live" / "Windows" */
   projects: {
     heading: "Projects",
-    subheading: "New projects I'm building during my studies. More coming soon.",
+    subheading: "Apps I have shipped — a food tracker and a Windows tool for reading code.",
     items: [
       {
-        title: "Project coming soon",
-        description: "My first project (placeholder).",
-        image: "",
-        demo: "",
-        code: "",
-        status: "Planned",
+        title: "Calora",
+        mark: "CA",
+        description: "A calm tracker for calories, macros, water and weight. Meals, barcode scans and streaks stay on the device, with optional cloud accounts.",
+        tags: ["TypeScript", "React", "Next.js", "Tailwind", "Supabase"],
+        image: "assets/calora.png",
+        demo: "https://khalilshakra.github.io/Calora/",
+        code: "https://github.com/KhalilShakra/Calora",
+        status: "Live",
       },
       {
-        title: "Project coming soon",
-        description: "A future API or cloud app.",
-        image: "",
-        demo: "",
-        code: "",
-        status: "Planned",
-      },
-      {
-        title: "Project coming soon",
-        description: "A small tool or experiment.",
-        image: "",
-        demo: "",
-        code: "",
-        status: "Planned",
-      },
-      {
-        title: "Project coming soon",
-        description: "Something built with .NET.",
-        image: "",
-        demo: "",
-        code: "",
-        status: "Planned",
+        title: "CodeBrief",
+        mark: "CB",
+        description: "A Windows desktop app that reads a snippet, detects the language and writes a teaching report. Analysis runs locally, with optional AI and PDF export.",
+        tags: ["C#", ".NET 8", "WPF", "QuestPDF"],
+        image: "assets/codebrief.png",
+        demo: "https://khalilshakra.github.io/codebrief/",
+        code: "https://github.com/KhalilShakra/codebrief",
+        status: "Windows",
       },
     ],
   },

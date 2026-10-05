@@ -87,13 +87,29 @@
       if (pr.image) {
         const img = el("img"); img.src = pr.image; img.alt = pr.title || "Project"; img.loading = "lazy"; thumb.appendChild(img);
       } else {
-        const ph = el("div", "ph"); ph.textContent = "</>"; thumb.appendChild(ph);
+        const ph = el("div", "ph");
+        const words = (pr.title || "P").trim().split(/\s+/).filter(Boolean);
+        const fallback = words.length > 1
+          ? (words[0][0] + words[1][0]).toUpperCase()
+          : (words[0] || "P").slice(0, 2).toUpperCase();
+        ph.textContent = (pr.mark || fallback).slice(0, 3);
+        thumb.appendChild(ph);
       }
       if (pr.status) { const b = el("span", "proj-badge"); b.textContent = pr.status; thumb.appendChild(b); }
       card.appendChild(thumb);
 
       const title = el("h3", "proj-title"); title.textContent = pr.title || "Untitled"; card.appendChild(title);
       if (pr.description) { const s = el("p", "proj-sub"); s.textContent = pr.description; card.appendChild(s); }
+
+      if (Array.isArray(pr.tags) && pr.tags.length) {
+        const tags = el("div", "proj-tags");
+        pr.tags.forEach((tag) => {
+          const chip = el("span", "proj-tag");
+          chip.textContent = tag;
+          tags.appendChild(chip);
+        });
+        card.appendChild(tags);
+      }
 
       const lr = el("div", "proj-links");
       if (pr.demo) { const a = el("a"); a.href = pr.demo; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Live ↗"; lr.appendChild(a); }
